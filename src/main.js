@@ -11,14 +11,18 @@ fastClick.attach(document.body)
 
 //按需导入mint-ui插件
 import 'mint-ui/lib/style.css'
-import { Header, Tabbar, TabItem, Button } from 'mint-ui'
-Vue.component(Button.name, Button)
+import { Header, Swipe, SwipeItem} from 'mint-ui'
 Vue.component(Header.name, Header)
-Vue.component(Tabbar.name, Tabbar)
-Vue.component(TabItem.name, TabItem)
+Vue.component(Swipe.name, Swipe)
+Vue.component(SwipeItem.name, SwipeItem)
 
 //导入mui样式表
 import '../static/mui/css/mui.min.css'
+import '../static/mui/css/icons-extra.css'
+
+//导入axios
+import axios from 'axios'
+Vue.prototype.$axios = axios
 
 Vue.config.productionTip = false
 
