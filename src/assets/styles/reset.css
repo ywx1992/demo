@@ -64,6 +64,7 @@ select, option{
     -webkit-user-select: none;
     user-select: none;
 }
+* { touch-action: none; }
 .clear {
     clear: both;
 }
