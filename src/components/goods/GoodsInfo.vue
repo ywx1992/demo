@@ -114,7 +114,7 @@
                 var distY = badgePosition.top - ballPosition.top
                 
                 el.style.transform=`translate(${distX}px,${distY}px)`
-                el.style.transition='all 0.6s cubic-bezier(0.35,-0.36, 0.25, 1)'
+                el.style.transition='all 0.3s cubic-bezier(0.35,-0.36, 0.25, 1)'
                 done()
             },
             afterEnter(el){
@@ -122,10 +122,19 @@
             },
             addGoods(){
                 this.ballFlag = !this.ballFlag
+                
+                const goodsinfo = {
+                    id: this.id,
+                    count: this.selectedCount,
+                    price: this.goodsinfo.sell_price,
+                    selected: true
+                }
+                
+                this.$store.commit('addToCart', goodsinfo)
             },
             getSelectedCount(count) {
                 this.selectedCount = count
-                console.log(count)
+                // console.log(count)
             }
             
         },
@@ -138,7 +147,8 @@
         overflow: hidden;
         .num {
             display: flex;
-            justify-content: left;
+            /*justify-content: left;*/
+            align-items: center;
         }
         .now {
             color: red;

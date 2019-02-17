@@ -2,10 +2,10 @@
     <div>
             <ul class="cate-content">
                 <li v-for="(item,index) in cate" :key="item.id">
-                    <a href="" :class="{active: selected==index}"
+                    <span href="" :class="{active: selected==index}"
                     @click.prevent="change(index);getPicList(item.id)">
                         {{item.title}}
-                    </a>
+                    </span>
                 </li>
             </ul>
 
